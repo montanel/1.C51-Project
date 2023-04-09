@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import time
+from scipy import stats
 
 #create useful variables
 idx = pd.IndexSlice
@@ -48,22 +49,7 @@ class IterTimer():
         self.default_print = default_print
         self.window = window
         self.current_iter = 0
-        self.log_times = log_times
-        
-        #if log_folder is None, we'll see if some default values exist
-        if self.log_times and log_folder is None:
-            if os.path.exists("F:/Code/misc/IterTimer/timer_data"): #propus
-                log_folder = "F:/Code/misc/IterTimer/timer_data"
-            # elif os.path.exists("C:/Code/misc/IterTimer/timer_data"): #mebsuta
-            #     log_folder = "C:/Code/misc/IterTimer/timer_data"
-            elif os.path.exists("timer_data"): #generic
-                log_folder = os.path.abspath("timer_data")
-            elif os.path.exists("../timer_data"): #generic
-                log_folder = os.path.abspath("../timer_data")
-            elif os.path.exists("../../timer_data"): #generic
-                log_folder = os.path.abspath("../../timer_data")
-            else: #if nothing then we don't log
-                self.log_times = False
+        self.log_times = False
 
         #if we have a log_folder of we found a default location, let's set up
         if self.log_times:
