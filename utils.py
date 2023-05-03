@@ -8,8 +8,8 @@ from scipy import stats
 idx = pd.IndexSlice
 rng = np.random.default_rng()
 plt_colours = plt.rcParams['axes.prop_cycle'].by_key()['color']
-plt.rcParams['svg.fonttype'] = 'none' #prevent matplotlib to save every letter separately in svg
-plt.rcParams['figure.facecolor'] = 'white' #make figure background white not transparent (for the sole purpose of sharing images in slack dark mode)
+# plt.rcParams['svg.fonttype'] = 'none' #prevent matplotlib to save every letter separately in svg
+# plt.rcParams['figure.facecolor'] = 'white' #make figure background white not transparent (for the sole purpose of sharing images in slack dark mode)
 porm = u"\u00B1"
 
 states_dict = {'01': 'AL', '02': 'AK', '04': 'AZ', '05': 'AR', '06': 'CA', '08': 'CO', '09': 'CT', '10': 'DE', 
